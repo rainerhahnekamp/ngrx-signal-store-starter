@@ -54,6 +54,39 @@
       "root": "",
       "schematics": {},
       "sourceRoot": "src"
+    },
+    "ext": {
+      "projectType": "library",
+      "root": "projects/ext",
+      "sourceRoot": "projects/ext/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/ext/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ext/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ext/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/ext/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
     }
   },
   "version": 1
