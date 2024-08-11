@@ -3,7 +3,7 @@ import { bootstrapApplication } from "@angular/platform-browser";
 import "zone.js";
 import { createStoreClass } from "../projects/ext/src/lib/ext.service";
 
-const PersonStore = createStoreClass({ id: 1, name: "Konrad" });
+const PersonStore = createStoreClass();
 
 @Component({
   selector: "app-root",

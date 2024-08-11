@@ -1,8 +1,7 @@
 import { signalStore, withState } from "@ngrx/signals";
-import { State } from "@ngrx/store";
 
-export function createStoreClass<State>(state: State) {
-  class Store extends signalStore(withState(State)) {}
+export function createStoreClass() {
+  class Store extends signalStore(withState({ id: 1, name: "Konrad" })) {}
 
   return Store;
 }
